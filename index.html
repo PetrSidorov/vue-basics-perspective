@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>CSS3 Perspective Playground</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <meta name="viewport" content="initial-scale=1.0" />
+</head>
+
+<body>
+
+  <div id="app">
+    <h2>Эффект перспективы в CSS3</h2>
+    <main>
+      <section class="output">
+        <div class="box-container">
+          <div class="box" :style="box"></div>
+        </div>
+      </section>
+      <section class="settings">
+        <div class="settings-container">
+          <label>perspective: {{ perspective }}px;</label>
+          <input type="range" min="0" max="999" v-model="perspective" />
+
+          <label>rotateX: {{ rotateX }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateX" />
+
+          <label>rotateY: {{ rotateY }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateY" />
+
+          <label>rotateZ: {{ rotateZ }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateZ" />
+          <div class="button-wrapper">
+            <button type="button" @click.prevent="reset">Сбросить</button>
+            <button class="сopy-button" type="button" @click.prevent="copy">Копировать</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
